@@ -1,0 +1,177 @@
+:root{
+	--primary:#0984e3;
+	--muted:#636e72;
+	--text:#2d3436;
+	--bg:#ffffff;
+	--card-bg:#fbfdff;
+	--max-width:1200px;
+	--radius:10px;
+}
+
+/* Page container */
+.experience-section{
+	max-width:var(--max-width);
+	margin: 0 auto;
+	padding: 40px 5%;
+	font-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	color:var(--text);
+}
+
+.experience-section .section-title{
+	display: flex;
+	flex-direction: column;
+	gap:8px;
+	margin-bottom: 28px;
+}
+
+.experience-section .section-title h2{
+	font-family: 'Poppins', sans-serif;
+	font-size: 26px;
+	color:var(--primary);
+}
+
+.experience-section .section-title p{
+	color:var(--muted);
+	font-size: 15px;
+}
+
+/* Timeline layout */
+.timeline{
+	position: relative;
+	padding: 30px 0;
+}
+
+.timeline::before{
+	content: '';
+	position: absolute;
+	left: 20px;
+	top: 0;
+	bottom: 0;
+	width: 3px;
+	background: linear-gradient(180deg,var(--primary), #74b9ff33);
+	border-radius: 2px;
+}
+
+.timeline-item{
+	position: relative;
+	margin: 18px 0 18px 60px;
+	padding: 30px 25px;
+	background: var(--card-bg);
+	border-radius: var(--radius);
+	box-shadow: 0 8px 20px rgba(16,24,40,0.06);
+	border: 1px solid rgba(3,33,78,0.03);
+}
+
+.timeline-item::before{
+	content: '';
+	position: absolute;
+	left: -46px;
+	top: 20px;
+	width: 12px;
+	height: 12px;
+	background: var(--bg);
+	border: 3px solid var(--primary);
+	border-radius: 50%;
+	box-shadow: 0 4px 10px rgba(9,132,227,0.12);
+}
+
+.timeline-item .meta{
+	display:flex;
+	align-items:center;
+	gap:10px;
+	margin-bottom:8px;
+}
+
+.timeline-item .meta .year{
+	font-weight:700;
+	color:var(--primary);
+	font-family: 'Poppins', sans-serif;
+}
+
+.timeline-item .meta .company{
+	color:var(--muted);
+	font-size:14px;
+}
+
+.timeline-item h3{
+	font-size:18px;
+	margin:6px 0 8px;
+	color:var(--text);
+}
+
+.timeline-item p{
+	color:var(--muted);
+	font-size:15px;
+	line-height:1.6;
+}
+
+.timeline-item .tags{
+	margin-top:12px;
+	display:flex;
+	gap:8px;
+	flex-wrap:wrap;
+}
+
+.timeline-item .tag{
+	background: rgba(9,132,227,0.08);
+	color:var(--primary);
+	font-size:13px;
+	padding:6px 10px;
+	border-radius:999px;
+}
+
+/* Compact grid for overlapping periods or side-by-side cards */
+.experience-grid{
+	display:grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap:20px;
+}
+
+.experience-card{
+	background:var(--card-bg);
+	padding:18px;
+	border-radius:8px;
+	box-shadow:0 6px 18px rgba(0,0,0,0.04);
+	border:1px solid rgba(3,33,78,0.03);
+}
+
+.experience-card h4{
+	color:var(--primary);
+	margin-bottom:6px;
+}
+
+.experience-card .period{
+	color:var(--muted);
+	font-size:14px;
+	margin-bottom:10px;
+}
+
+/* Small utility */
+.muted{ color: var(--muted); }
+
+/* Responsive behaviour */
+@media (max-width: 900px){
+	.experience-grid{ grid-template-columns: 1fr; }
+	.timeline::before{ left: 12px; }
+	.timeline-item{ margin-left: 44px; }
+	.timeline-item::before{ left: -36px; }
+}
+
+@media (max-width: 520px){
+	.experience-section{ padding: 28px 6%; }
+	.timeline::before{ display:none; }
+	.timeline-item{ margin-left: 0; padding-left: 52px; }
+	.timeline-item::before{ left: 12px; }
+}
+
+/* Accessibility: focus styles */
+.timeline-item:focus-within{
+	outline: 3px solid rgba(9,132,227,0.12);
+}
+
+/* Small helper for print */
+@media print{
+	.timeline::before{ background:#000; }
+	.timeline-item{ box-shadow:none; border-color:#ddd; }
+}
+

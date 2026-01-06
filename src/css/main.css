@@ -14,3 +14,60 @@ body {
     margin: 0 auto;
     padding: 40px 5%;
 }
+
+/* Hero layout: left = profile (circle + name/title), right = about text */
+.hero {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.hero-left {
+    flex: 0 0 320px;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.hero-left h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+    color: #2d3436;
+}
+
+.hero-left h2 {
+    font-size: 16px;
+    color: #636e72;
+    font-weight: 500;
+}
+
+.hero-right {
+    flex: 1;
+}
+
+.hero-right h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0984e3;
+}
+
+.hero-right p {
+    font-size: 16px;
+    color: #2d3436;
+    line-height: 1.7;
+}
+
+@media (max-width: 720px) {
+    .hero { flex-direction: column; text-align: center; }
+    .hero-left { flex: none; }
+    .hero-right { text-align: left; width: 100%; }
+}
