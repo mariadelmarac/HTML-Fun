@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /pages/
+Allow: /src/
+Disallow: /IMG/
+
+# Sitemaps
+Sitemap: https://mariaacosta.com/sitemap.xml
+
+# Retraso entre solicitudes (en segundos)
+Crawl-delay: 1
